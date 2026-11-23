@@ -1,0 +1,412 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Luxpackers Trip Fill Sheet</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a working sheet that mirrors the dashboard — trip switcher, then the builder's own tab order, each field with its copy button. */
+:root {
+  --bg: #f6f7f9;
+  --panel: #ffffff;
+  --fg: #111827;
+  --muted: #5b6472;
+  --line: #e3e6eb;
+  --accent: #1d5bd8;
+  --accent-soft: #e8effc;
+  --warn-bg: #fff6e0;
+  --warn-fg: #7a5200;
+  --warn-line: #f0d48a;
+  --sug-bg: #fdf1dc;
+  --sug-fg: #8a5a00;
+  --ok: #157347;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1216; --panel: #171b21; --fg: #e8ebef; --muted: #9aa3af; --line: #2a3038;
+    --accent: #7aa6ff; --accent-soft: #1b2a45; --warn-bg: #2b2412; --warn-fg: #f2cf7a; --warn-line: #5a4a1c;
+    --sug-bg: #33270f; --sug-fg: #f0c46c; --ok: #5cc98f; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1216; --panel: #171b21; --fg: #e8ebef; --muted: #9aa3af; --line: #2a3038;
+  --accent: #7aa6ff; --accent-soft: #1b2a45; --warn-bg: #2b2412; --warn-fg: #f2cf7a; --warn-line: #5a4a1c;
+  --sug-bg: #33270f; --sug-fg: #f0c46c; --ok: #5cc98f; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 15px; line-height: 1.5; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--panel); }
+.wrap { max-width: 1080px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header.top { background: var(--panel); border-bottom: 1px solid var(--line); }
+header.top .wrap { padding-block: 22px 14px; display: grid; gap: 14px; }
+h1 { font-size: 1.45rem; margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
+.lede { margin: 2px 0 0; color: var(--muted); max-width: 70ch; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 0.82rem; color: var(--muted); align-items: center; }
+.trips { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 2px; scrollbar-width: thin; }
+.trip-btn { flex: none; border: 1px solid var(--line); background: var(--panel); color: var(--fg); border-radius: 10px; padding: 8px 12px; font: inherit; font-size: 0.9rem; cursor: pointer; text-align: left; display: grid; gap: 0; }
+.trip-btn small { color: var(--muted); font-size: 0.74rem; }
+.trip-btn[aria-selected="true"] { border-color: var(--accent); background: var(--accent-soft); box-shadow: inset 0 0 0 1px var(--accent); }
+.trip-btn:focus-visible, .copy:focus-visible, .tabs a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+nav.tabs { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); }
+nav.tabs .wrap { display: flex; gap: 4px; overflow-x: auto; padding-block: 8px; scrollbar-width: thin; }
+.tabs a { flex: none; color: var(--muted); text-decoration: none; font-size: 0.86rem; padding: 6px 10px; border-radius: 8px; }
+.tabs a:hover { background: var(--accent-soft); color: var(--fg); }
+
+main .wrap { padding-block: 20px 60px; display: grid; gap: 18px; }
+.trip-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; align-items: baseline; }
+.trip-head h2 { margin: 0; font-size: 1.3rem; }
+.src { font-size: 0.8rem; color: var(--muted); font-family: var(--mono); overflow-wrap: anywhere; }
+.checks { background: var(--warn-bg); color: var(--warn-fg); border: 1px solid var(--warn-line); border-radius: 12px; padding: 12px 16px; }
+.checks strong { display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
+.checks ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
+
+section.card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; scroll-margin-top: 64px; overflow: hidden; }
+.card-h { padding: 16px 20px 12px; border-bottom: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; justify-content: space-between; }
+.card-h h3 { margin: 0; font-size: 1.05rem; }
+.card-h p { margin: 0; color: var(--muted); font-size: 0.85rem; flex-basis: 100%; }
+.card-b { padding: 6px 20px 16px; }
+.sub-h { margin: 18px 0 4px; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 600; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+
+.row { display: grid; grid-template-columns: 190px minmax(0, 1fr) auto; gap: 6px 14px; padding: 11px 0; border-bottom: 1px solid var(--line); align-items: start; }
+.row:last-child { border-bottom: 0; }
+.label { font-size: 0.86rem; font-weight: 600; padding-top: 2px; }
+.val { min-width: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.val.mono { font-family: var(--mono); font-size: 0.9rem; }
+.none { color: var(--muted); font-style: italic; }
+.tag { display: inline-block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.03em; border-radius: 999px; padding: 1px 8px; margin-left: 6px; vertical-align: 1px; font-style: normal; }
+.tag.sug { background: var(--sug-bg); color: var(--sug-fg); }
+.tag.calc { background: var(--accent-soft); color: var(--accent); }
+.hint { display: block; color: var(--muted); font-size: 0.82rem; margin-top: 4px; white-space: normal; }
+
+.copy { border: 1px solid var(--line); background: var(--panel); color: var(--fg); border-radius: 8px; font: inherit; font-size: 0.78rem; font-weight: 600; padding: 4px 10px; cursor: pointer; white-space: nowrap; }
+.copy:hover { border-color: var(--accent); color: var(--accent); }
+.copy.done { border-color: var(--ok); color: var(--ok); }
+
+ol.items, ul.items { list-style: none; margin: 0; padding: 0; }
+.items li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; padding: 8px 0; border-bottom: 1px dashed var(--line); align-items: start; }
+.items li:last-child { border-bottom: 0; }
+.items li > span { min-width: 0; overflow-wrap: anywhere; }
+
+.day { border: 1px solid var(--line); border-radius: 12px; margin-top: 14px; }
+.day-h { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-bottom: 1px solid var(--line); background: var(--bg); border-radius: 12px 12px 0 0; }
+.day-n { font-family: var(--mono); font-size: 0.8rem; color: var(--accent); font-weight: 500; white-space: nowrap; }
+.day-b { padding: 2px 14px 8px; }
+.day-b .row { grid-template-columns: 120px minmax(0, 1fr) auto; }
+
+.stay-grid { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); margin-top: 12px; }
+.stay { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; display: grid; gap: 2px; }
+.stay b { font-size: 0.95rem; }
+.stay span { font-size: 0.85rem; color: var(--muted); }
+
+.sform { border: 1px solid var(--line); border-radius: 12px; margin-top: 14px; overflow: hidden; }
+.sform-h { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; padding: 10px 14px; background: var(--bg); border-bottom: 1px solid var(--line); }
+.fgrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; padding: 14px; }
+.f { display: grid; gap: 5px; align-content: start; min-width: 0; }
+.f.wide { grid-column: 1 / -1; }
+.f.w2 { grid-column: span 2; }
+@media (max-width: 480px) { .f.w2 { grid-column: auto; } }
+.f-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; min-height: 26px; }
+.f-top label { font-size: 0.8rem; font-weight: 600; }
+.fbox { border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; min-height: 36px; overflow-wrap: anywhere; background: var(--panel); }
+.fbox.none { color: var(--muted); font-style: italic; font-size: 0.86rem; }
+@media (max-width: 860px) { .fgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .fgrid { grid-template-columns: minmax(0, 1fr); } }
+.hrow { display: grid; grid-template-columns: 22px minmax(0, 1fr) minmax(0, 2fr); gap: 12px; align-items: start; border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; margin-top: 10px; }
+.hrow .day-n { padding-top: 38px; }
+@media (max-width: 640px) { .hrow { grid-template-columns: minmax(0, 1fr); } .hrow .day-n { padding-top: 0; } }
+.rel { display: flex; align-items: center; gap: 10px; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; margin-top: 8px; }
+.rel > div { flex: 1; min-width: 0; display: grid; gap: 2px; }
+.rel b { font-weight: 600; overflow-wrap: anywhere; }
+.rel span { font-size: 0.84rem; color: var(--muted); }
+.rel .tag { margin: 0; }
+.tick { width: 24px; height: 24px; flex: none; border-radius: 50%; background: var(--accent); color: var(--panel) !important; display: grid; place-items: center; font-size: 0.8rem !important; font-weight: 700; }
+.quote { border-left: 3px solid var(--line); padding: 4px 0 4px 12px; }
+.quote cite { display: block; font-style: normal; color: var(--muted); font-size: 0.84rem; margin-top: 2px; }
+
+@media (max-width: 640px) {
+  .row, .day-b .row { grid-template-columns: minmax(0, 1fr) auto; }
+  .row .label { grid-column: 1 / -1; }
+  .card-h, .card-b { padding-left: 14px; padding-right: 14px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+html { scroll-behavior: smooth; }
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <div>
+      <h1>Luxpackers Trip Fill Sheet</h1>
+      <p class="lede">Every field of the New Trip Builder, filled from the seven itinerary PDFs. Pick a trip, then copy each answer into the matching box in the dashboard.</p>
+    </div>
+    <div class="legend">
+      <span>Plain text is copied from the PDF.</span>
+      <span><span class="tag sug" style="margin:0">Suggested</span> is my suggestion; the PDF doesn't say it.</span>
+      <span><span class="none">Not in PDF</span> means leave it or fill it yourself.</span>
+    </div>
+    <div class="trips" id="trips" role="tablist" aria-label="Trips"></div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Builder tabs">
+  <div class="wrap">
+    <a href="#s-basics">Basics</a><a href="#s-pricing">Pricing</a><a href="#s-itinerary">Itinerary</a><a href="#s-stays">Stays</a><a href="#s-included">Included</a><a href="#s-tour">Tour Info</a><a href="#s-media">Media</a><a href="#s-gallery">Gallery</a><a href="#s-shorts">Trip Shorts &amp; Past Photos</a><a href="#s-social">Social &amp; Related</a><a href="#s-faq">FAQ &amp; Terms</a><a href="#s-batches">Batches</a>
+  </div>
+</nav>
+
+<main><div class="wrap" id="sheet"></div></main>
+
+<script src="data.js"></script>
+<script src="stays.js"></script>
+<script src="highlights.js"></script>
+<script src="related.js"></script>
+<script src="batches.js"></script>
+<script src="optional.js"></script>
+<script>
+(function () {
+  const trips = window.TRIPS;
+  const $ = (s, r = document) => r.querySelector(s);
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const store = [];               // text for each copy button, by index
+  const reg = (t) => store.push(t) - 1;
+
+  const isSug = (v) => v && typeof v === "object" && v.suggested;
+  const textOf = (v) => (v == null ? "" : isSug(v) ? v.text : String(v));
+  const inr = (n) => Number(n).toLocaleString("en-IN");
+
+  function copyBtn(text, label = "Copy") {
+    if (!text) return "";
+    return `<button class="copy" type="button" data-i="${reg(text)}">${label}</button>`;
+  }
+  function value(v, mono) {
+    if (v == null || v === "") return `<div class="val none">Not in PDF</div>`;
+    const t = textOf(v);
+    return `<div class="val${mono ? " mono" : ""}">${esc(t)}${isSug(v) ? '<span class="tag sug">Suggested</span>' : ""}</div>`;
+  }
+  function row(label, v, opts = {}) {
+    const t = textOf(v);
+    const hint = opts.hint ? `<span class="hint">${esc(opts.hint)}</span>` : "";
+    let val = value(v, opts.mono);
+    if (hint) val = val.replace(/<\/div>$/, hint + "</div>");
+    if (opts.calc && t) val = val.replace(/<\/div>$/, '<span class="tag calc">Calculated</span></div>');
+    return `<div class="row"><div class="label">${esc(label)}</div>${val}<div>${copyBtn(t)}</div></div>`;
+  }
+  function list(title, items, emptyText = "Not in PDF") {
+    const head = `<div class="sub-h"><span>${esc(title)}${items && items.length ? ` · ${items.length}` : ""}</span>${items && items.length ? copyBtn(items.map(textOf).join("\n"), "Copy all") : ""}</div>`;
+    if (!items || !items.length) return head + `<p class="none" style="margin:6px 0">${esc(emptyText)}</p>`;
+    return head + `<ul class="items">${items.map((it) => `<li><span>${esc(textOf(it))}${isSug(it) ? '<span class="tag sug">Suggested</span>' : ""}</span>${copyBtn(textOf(it))}</li>`).join("")}</ul>`;
+  }
+  function card(id, title, desc, body, extra = "") {
+    return `<section class="card" id="${id}"><div class="card-h"><h3>${esc(title)}</h3>${extra}<p>${esc(desc)}</p></div><div class="card-b">${body}</div></section>`;
+  }
+
+  function field(label, v, opts = {}) {
+    const txt = textOf(v);
+    const shown = v == null || v === ""
+      ? `<div class="fbox none">${esc(opts.empty || "Not in PDF")}</div>`
+      : `<div class="fbox">${esc(txt)}${isSug(v) ? '<span class="tag sug">Suggested</span>' : ""}</div>`;
+    return `<div class="f${opts.wide ? " wide" : opts.wide2 ? " w2" : ""}"><div class="f-top"><label>${esc(label)}</label>${copyBtn(txt)}</div>${shown}${opts.hint ? `<span class="hint">${esc(opts.hint)}</span>` : ""}</div>`;
+  }
+  function optionalForm(op) {
+    const head = `<div class="sub-h"><span>Optional Days · ${op.items.length}</span></div><p class="hint" style="margin:0 0 6px">${esc(op.note)}</p>`;
+    if (!op.items.length) return head;
+    return head + `<p class="hint" style="margin:0 0 6px">Click “+ Add Option” once per block, then fill the boxes in the same order as the dashboard.</p>` +
+      op.items.map((o, i) => `
+      <div class="sform">
+        <div class="sform-h"><span class="day-n">Option ${i + 1} of ${op.items.length}</span><strong>${esc(o.name)}</strong></div>
+        <div class="fgrid opt">
+          ${field("Option name (first box)", o.name, { wide2: true })}
+          ${field("Extra days (number box)", o.days, { empty: "Not in PDF", hint: o.days === "0" ? "Uses an existing day." : "" })}
+          ${field("Additional price ₹", o.price, { empty: "Priced on request", hint: "No number in the PDF. Ask the team, or leave empty." })}
+          ${field("What the extra days include", o.desc, { wide: true })}
+          ${field("OR choice group (optional)", o.group || null, { wide: true, empty: "Leave blank", hint: o.group ? "Type the same group name on each option in this set, so customers pick one of them." : "" })}
+          ${field("Option Images", null, { wide: true, empty: "Not in PDF. Skip, or add a photo of the place." })}
+        </div>
+      </div>`).join("");
+  }
+
+  function render(t) {
+    store.length = 0;
+    const b = t.basics, p = t.pricing;
+    const remaining = p.full && p.token ? String(Number(p.full) - Number(p.token)) : null;
+
+    const basics = [
+      row("Destination *", b.destination, { hint: "Pick from the dropdown." }),
+      row("Market", b.market),
+      row("Trip Type", b.tripType, { hint: "Pick the closest option in the dropdown." }),
+      row("Title *", b.title),
+      row("Slug *", b.slug, { mono: true }),
+      row("Trip Theme", b.theme),
+      row("Subtitle", b.subtitle),
+      row("Description", b.description)
+    ].join("");
+
+    const op = (window.OPTIONAL || {})[t.id];
+    const optional = op ? optionalForm(op) : p.optional.length
+      ? `<div class="sub-h"><span>Optional Days · ${p.optional.length}</span></div>` + p.optional.map((o) => `
+        <div class="day"><div class="day-h"><strong>${esc(o.name)}</strong></div><div class="day-b">
+          ${row("Option name", o.name)}${row("Extra duration", o.dur)}${row("Price", o.price)}${o.note ? row("Details", o.note) : ""}
+        </div></div>`).join("")
+      : `<div class="sub-h"><span>Optional Days</span></div><p class="none" style="margin:6px 0">None in PDF. Leave as “No optional extensions”.</p>`;
+    const pricing = [
+      row("No. of Days *", p.days, { mono: true }),
+      row("No. of Nights *", p.nights, { mono: true }),
+      row("Full Amount (₹) *", p.full, { mono: true, hint: p.full ? "₹" + inr(p.full) : "" }),
+      row("Slashed Price (₹)", p.slashed, { mono: true, hint: p.slashed ? "₹" + inr(p.slashed) : "" }),
+      row("Token Amount (₹) *", p.token, { mono: true, calc: true, hint: p.token ? "₹" + inr(p.token) : "" }),
+      row("Remaining Amount (₹)", remaining, { mono: true, calc: true, hint: remaining ? "Fills itself in the dashboard: ₹" + inr(remaining) : "" })
+    ].join("") + (p.note ? `<p class="hint" style="margin:10px 0 0">${esc(p.note)}</p>` : "") + optional;
+
+    const itin = t.itinerary.map((d) => `
+      <div class="day"><div class="day-h"><span class="day-n">Day ${esc(d.day)}</span><strong>${esc(d.title)}</strong></div><div class="day-b">
+        ${row("Day title", d.title)}
+        ${row("Locations", d.locations)}
+        <div class="row"><div class="label">Activities</div><div class="val" style="white-space:normal">${d.activities.map((a) => `<div style="padding:2px 0">• ${esc(a)}</div>`).join("")}</div><div>${copyBtn(d.activities.join("\n"), "Copy all")}</div></div>
+        ${d.note ? row("Notes", d.note) : ""}
+      </div></div>`).join("");
+
+    const sf = (window.STAYS || {})[t.id];
+    const fld = (label, v, opts = {}) => {
+      const txt = textOf(v);
+      const shown = v == null || v === ""
+        ? `<div class="fbox none">${esc(opts.empty || "Not in PDF")}</div>`
+        : `<div class="fbox">${esc(txt)}${isSug(v) ? '<span class="tag sug">Suggested</span>' : ""}</div>`;
+      return `<div class="f${opts.wide ? " wide" : ""}"><div class="f-top"><label>${esc(label)}</label>${copyBtn(txt)}</div>${shown}${opts.hint ? `<span class="hint">${esc(opts.hint)}</span>` : ""}</div>`;
+    };
+    const stays = !sf ? "" : `<p class="hint" style="margin:8px 0 0">${esc(sf.note)}</p>` + sf.items.map((s, i) => `
+      <div class="sform">
+        <div class="sform-h"><span class="day-n">Stay ${i + 1} of ${sf.items.length}</span><strong>${esc(s.location)}</strong><span class="hint" style="margin:0">Click “Add Stay”, then fill:</span></div>
+        <div class="fgrid">
+          ${fld("From Day", s.from)}
+          ${fld("To Day (for multi-night stays)", s.to)}
+          ${fld("Tier", s.tier, { hint: "Choose this in the dropdown." })}
+          ${fld("Hotel", s.hotel, { empty: "Not in PDF", hint: "Type the booked hotel name." })}
+          ${fld("Star Rating", s.star, { hint: s.star === "4" ? "PDF says 3–4★, so 4 is used." : "" })}
+          ${fld("Location", s.location)}
+          ${fld("Alternative Label", s.alt)}
+          ${fld("Hotel Photo", s.photo, { empty: "Not in PDF. Upload the hotel’s photo." })}
+          ${fld("Description", s.desc, { wide: true })}
+          ${fld("Amenities (comma separated)", s.amenities, { wide: true })}
+        </div>
+      </div>`).join("");
+
+    const inc = t.included;
+    const hl = (window.HIGHLIGHTS || {})[t.id];
+    const highlights = !hl ? list("Highlights", inc.highlights) :
+      `<div class="sub-h"><span>Highlights · ${hl.length}</span></div>
+       <p class="hint" style="margin:0 0 6px">Click “Add” once per row. Left box goes in the short title field, right box in the “customer-facing detail” field.</p>` +
+      hl.map(([title, detail], i) => `
+        <div class="hrow">
+          <span class="day-n">${i + 1}</span>
+          <div class="f"><div class="f-top"><label>Title</label>${copyBtn(title)}</div><div class="fbox">${esc(title)}</div></div>
+          <div class="f"><div class="f-top"><label>Detail</label>${copyBtn(detail)}</div><div class="fbox">${esc(detail)}</div></div>
+        </div>`).join("");
+    const included = list("Inclusions", inc.inclusions) + list("Exclusions", inc.exclusions) + highlights;
+
+    const tr = t.tour;
+    const tour = [
+      row("Pickup Point", tr.pickup), row("Dropoff Point", tr.dropoff), row("Accommodation", tr.accommodation)
+    ].join("") + list("Transport (add each one)", tr.transport) + [
+      row("Meal Plan", tr.meal), row("Group Size", tr.group), row("Difficulty", tr.difficulty), row("Best Time to Visit", tr.best)
+    ].join("");
+
+    const media = row("Wide cover photo", t.media.cover, { hint: "Which photo to upload (landscape, 1200 × 675)." }) + row("Alt text", t.media.alt);
+    const gallery = list("Photos to upload (landscape or portrait)", t.gallery);
+    const shorts = row("Instagram & YouTube Shorts", t.shorts) + row("Past Trip Photo Carousel", t.pastPhotos);
+
+    const testi = t.testimonials.length
+      ? `<p class="hint" style="margin:0 0 6px">Click “+ Add” once per review, then fill each box.</p>` + t.testimonials.map((q, i) => `
+        <div class="sform">
+          <div class="sform-h"><span class="day-n">Review ${i + 1} of ${t.testimonials.length}</span><strong>${esc(q.name)}</strong></div>
+          <div class="fgrid">
+            ${fld("Traveler name", q.name)}
+            ${fld("Trip label", q.trip.replace(/\s*·\s*Google Reviews$/, ""))}
+            ${fld("Rating", S("5"), { hint: "The PDF shows only an overall Google rating of 4.9, not stars per review." })}
+            ${fld("Status", "Approved", { hint: "Pick in the dropdown." })}
+            ${fld("What they loved about this trip", q.quote, { wide: true })}
+            ${fld("Traveler photo (optional)", null, { empty: "Not in PDF. Leave empty." })}
+            ${fld("Review photos", null, { empty: "Not in PDF. Leave empty." })}
+          </div>
+        </div>`).join("")
+      : `<p class="none" style="margin:6px 0">No trip-specific reviews in this PDF. Leave Testimonials empty.</p>`;
+    const rel = (window.RELATED || {})[t.id] || [];
+    const related = `<div class="sub-h"><span>Related Trips · tick ${rel.length}</span></div>
+      <p class="hint" style="margin:0 0 6px">Find each card in the dashboard list and click its circle. My picks: the PDFs don't name related trips. Trips marked “New” appear in the list only after you save them.</p>` +
+      rel.map((r) => `<div class="rel"><div><b>${esc(r.title)}</b><span>${esc(r.sub)}</span>${r.note ? `<span class="hint">${esc(r.note)}</span>` : ""}</div>
+        <span class="tag ${r.kind === "new" ? "calc" : "sug"}">${r.kind === "new" ? "New" : "In your list"}</span><span class="tick" aria-hidden="true">✓</span></div>`).join("");
+    const social = `<div class="sub-h"><span>Testimonials</span></div>${testi}` + related;
+
+    const faqs = `<div class="sub-h"><span>FAQs · ${t.faqs.length}</span></div>` + t.faqs.map((f) => `
+      <div class="day"><div class="day-b">${row("Question", f.q)}${row("Answer", f.a)}</div></div>`).join("");
+    const terms = `<div class="sub-h"><span>Terms &amp; Policies · ${t.terms.length}</span></div>` + t.terms.map((x) => `
+      <div class="day"><div class="day-b">${row("Title", x.t)}${row("Details", x.d)}</div></div>`).join("");
+
+    const bt = (window.BATCHES || {})[t.id];
+    const batches = !bt ? "" :
+      `<div class="sub-h"><span>${esc(bt.verdict)}</span></div><p class="hint" style="margin:0 0 6px">${esc(bt.why)}</p>` +
+      bt.items.map((b) => `
+        <div class="sform"><div class="sform-h"><span class="day-n">New Batch</span><strong>${esc(b.start)} → ${esc(b.end)}</strong></div>
+          <div class="fgrid">
+            ${fld("Start Date *", b.start, { hint: "Pick in the date picker (dd/mm/yyyy)." })}
+            ${fld("End Date *", b.end)}
+            ${fld("Total Seats *", b.seats, { empty: "Not in PDF. Enter your seat count." })}
+            ${fld("Seats Filled", b.filled, { hint: "Bookings already confirmed. 0 for a new batch." })}
+            ${fld("Urgency Message", b.urgency || null, { wide: true, empty: "Leave blank", hint: b.urgencyHint })}
+            ${fld("Status", b.status, { hint: b.statusHint || "Pick in the dropdown." })}
+          </div></div>`).join("");
+
+    $("#sheet").innerHTML = `
+      <div class="trip-head"><h2>${esc(t.tab)} <span style="color:var(--muted);font-weight:500">· ${esc(t.sub)}</span></h2><span class="src">${esc(t.pdf)}</span></div>
+      <div class="checks"><strong>Check before publishing</strong><ul>${t.checks.map((c) => `<li>${esc(c)}</li>`).join("")}</ul></div>
+      ${card("s-basics", "Basics", "Core package identity and selling copy.", basics)}
+      ${card("s-pricing", "Pricing & Duration", "Amounts for the trip header and booking card, plus optional extensions.", pricing)}
+      ${card("s-itinerary", "Day-wise Itinerary", "Add one day at a time with “Add Day”, then copy each part.", itin)}
+      ${card("s-stays", "Stay Options", "Each block below is one “Add Stay” form, laid out like the dashboard: From Day, To Day, Tier, Hotel, Star Rating, Location, Alternative Label, Hotel Photo, Description, Amenities.", stays)}
+      ${card("s-included", "Included", "Inclusions, exclusions and highlights. Add each line as its own entry.", included)}
+      ${card("s-tour", "Tour Information", "Operational details travellers expect before booking.", tour)}
+      ${card("s-media", "Media · Cover Image", "The single wide hero image at the top of the trip page.", media)}
+      ${card("s-gallery", "Gallery", "Destination, hotel, past-trip and group photos.", gallery)}
+      ${card("s-shorts", "Trip Shorts & Past Photos", "Instagram Reels / YouTube Shorts links and the past-trip carousel.", shorts)}
+      ${card("s-social", "Social & Related", "Testimonials and ‘You may also like’ trips.", social)}
+      ${card("s-batches", "Manage Batches", "Trips list → Manage Batches → New Batch. One batch is one fixed departure date.", batches)}
+      <section class="card" id="s-faq" style="border:0;background:none;overflow:visible">
+        ${card("s-faq-inner", "FAQs", "Questions and answers taken from the PDF’s notes.", faqs)}
+        <div style="height:18px"></div>
+        ${card("s-terms", "Terms & Policies", "Booking, cancellation, refund, child and operational notes.", terms)}
+      </section>`;
+    document.querySelectorAll(".trip-btn").forEach((btn) => btn.setAttribute("aria-selected", String(btn.dataset.id === t.id)));
+  }
+
+  $("#trips").innerHTML = trips.map((t) => `<button class="trip-btn" role="tab" type="button" data-id="${t.id}" aria-selected="false">${esc(t.tab)}<small>${esc(t.sub)}</small></button>`).join("");
+  $("#trips").addEventListener("click", (e) => {
+    const b = e.target.closest(".trip-btn"); if (!b) return;
+    history.replaceState(null, "", "#" + b.dataset.id);
+    show(b.dataset.id); window.scrollTo({ top: 0 });
+  });
+
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest(".copy"); if (!b) return;
+    const text = store[Number(b.dataset.i)];
+    const done = () => { const old = b.textContent; b.textContent = "Copied"; b.classList.add("done"); setTimeout(() => { b.textContent = old; b.classList.remove("done"); }, 1200); };
+    const fallback = () => {
+      const ta = document.createElement("textarea"); ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy"); done(); } catch (_) {}
+      ta.remove();
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, fallback); else fallback();
+  });
+
+  function show(id) {
+    const t = trips.find((x) => x.id === id) || trips[0];
+    render(t);
+  }
+  const fromHash = () => { const h = location.hash.slice(1); return trips.some((t) => t.id === h) ? h : null; };
+  window.addEventListener("hashchange", () => { const h = fromHash(); if (h) show(h); });
+  show(fromHash() || trips[0].id);
+})();
+</script>
+
+</body></html>
