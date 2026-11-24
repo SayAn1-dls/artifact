@@ -68,5 +68,6 @@ window.OPTIONAL = {
         priceHint: "No price in the file. Ask the team, or leave empty.",
         desc: "Extend one night: Tbilisi celebrates New Year's Eve with extraordinary energy. The whole old city becomes a firework-lit street party." }
     ]
-  }
+  },
+  "egypt": { note: "No optional extra days in the PDF. Going inside the Pyramid is an optional ticket, not an extra day. Leave Optional Days empty.", items: [] }
 };

@@ -38,5 +38,10 @@ window.RELATED = {
     { title: "SRI LANKA ISLAND LOOP", sub: "Sri Lanka", kind: "new" },
     { title: "VIETNAM IN DEPTH", sub: "Vietnam", kind: "new" },
     { title: "BALI CUSTOMISABLE TRIP", sub: "Bali", kind: "new" }
+  ],
+  "egypt": [
+    { title: "GEORGIA — A COUPLE'S WINTER JOURNEY", sub: "Georgia", kind: "new" },
+    { title: "SRI LANKA ISLAND LOOP", sub: "Sri Lanka", kind: "new" },
+    { title: "VIETNAM IN DEPTH", sub: "Vietnam", kind: "new" }
   ]
 };

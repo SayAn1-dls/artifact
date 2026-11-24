@@ -807,6 +807,99 @@ window.TRIPS = [
     { t: "Alcohol & driving", d: "Drunk driving laws are strict (zero tolerance). All transfers are included — let your driver handle the roads." },
     { t: "Add-on experiences", d: "Luxury add-ons are extra and priced as estimates: private ski day at Gudauri $120–180 per person (half day) · helicopter over the Caucasus $300–500 per couple (30 min) · private supra $60–100 per couple · couple photoshoot $150–300 (half day) · in-suite spa $80–150 per couple (90 min)." }
   ]
+},
+
+/* ───────────────────────── EGYPT ───────────────────────── */
+{
+  id: "egypt", tab: "Egypt", sub: "7D / 6N", pdf: "Your-7-Day-Egyptian-Adventure-Cairo-and-Alexandria-Nov-12-18-2025.pdf",
+  checks: [
+    "This PDF was written for one couple's trip (12–18 Nov 2025). Client names, flight numbers and dates are left out here so the trip can be listed for everyone.",
+    "Egypt is not in your Destinations list yet. Add it under Destinations before saving this trip.",
+    "The PDF contradicts itself in places: 5 vs 6 nights, 4 vs 5 lunches, the desert day called Day 5 and Day 6, and the Egyptian Museum entry listed as both included and not included. This sheet uses 6 nights, desert safari on Day 5 and a free Day 6. Confirm the museum ticket with the Egypt partner.",
+    "Price ₹66,777 per person comes from ₹1,33,554 for 2 travellers. It included a complimentary night and visa, and excluded flights. Re-check it for new dates. The PDF has no token amount.",
+    "Tips: the FAQ answers say $6–7 per person per day, mandatory, while the PDF suggests ₹500–800/day for guides. The FAQ answer is used below."
+  ],
+  basics: {
+    destination: "Egypt",
+    market: "International",
+    tripType: "Custom / private trip",
+    title: "EGYPT: CAIRO & ALEXANDRIA",
+    slug: "egypt-cairo-alexandria",
+    theme: S("Heritage, Culture, Adventure"),
+    subtitle: "From pyramids to Mediterranean shores",
+    description: "A 7-day Egyptian adventure through Cairo and Alexandria, crafted by Luxpackers. Stand before the Great Pyramids and the Sphinx with an expert Egyptologist, step inside Saqqara and ancient Memphis, wander Islamic and Coptic Cairo and haggle in Khan El Khalili, then head north to Alexandria's Greco-Roman heritage on the Mediterranean. Add a romantic Nile dinner cruise, a desert safari with ATV and camel rides, and a free day to explore at your own pace. A seamless mix of structured tours and personal exploration, designed to immerse you in 5,000 years of history."
+  },
+  pricing: {
+    days: "7", nights: "6", full: "66777", slashed: null, token: null,
+    note: "PDF: “Total Package Cost: ₹1,33,554 for 2 travellers (₹66,777 per person)”, flights not included. No token amount or payment policy in the PDF.",
+    optional: []
+  },
+  itinerary: [
+    { day: 1, title: "Arrival & Romantic Nile Dinner Cruise", locations: "Cairo International Airport, Cairo, Nile River",
+      activities: ["Arrive at Cairo International Airport. Your Luxpackers representative gives you a warm Egyptian welcome.","Private, air-conditioned transfer to the Sayyed Effendi Hotel. Check in, freshen up, and enjoy a relaxing afternoon.","Evening: Nile Dinner Cruise — spectacular views of the illuminated Cairo skyline.","Traditional Egyptian dinner with local flavours, and live entertainment: belly dancing & Tanoura shows.","Return transfer to the hotel included."],
+      note: "Meals: Dinner on the Nile Cruise. Cruise transfers are shared (SIC)." },
+    { day: 2, title: "Pyramids, Sphinx & Ancient Memphis", locations: "Giza Plateau, Saqqara, Memphis",
+      activities: ["Full-day private tour with an expert English-speaking Egyptologist guide.","Giza Plateau: the Great Pyramid of Khufu, the Pyramids of Khafre & Menkaure, the Great Sphinx and the Valley Temple.","Saqqara: the Step Pyramid of Djoser — the world's first monumental stone building — and the necropolis with mastaba tombs and preserved hieroglyphics.","Memphis: the first capital of unified Egypt, the colossal 10-metre statue of Ramses II and the 80-ton Alabaster Sphinx.","Return to the hotel by evening."],
+      note: "Meals: Breakfast, Lunch during tour. Included: private A/C vehicle, Egyptologist guide, all entrance tickets, bottled water. Going inside the Pyramid is optional and not included." },
+    { day: 3, title: "Islamic Cairo & Khan El Khalili Bazaar", locations: "Cairo Citadel, Old Cairo (Coptic Cairo), Khan El Khalili, Egyptian Museum",
+      activities: ["Private morning tour: the 12th-century Cairo Citadel and the Ottoman-style Mosque of Muhammad Ali, with views over Cairo.","Old Cairo: the Hanging Church (Al-Muallaqa), built above a Roman fortress gatehouse, and the streets where the Holy Family is believed to have taken refuge.","Khan El Khalili Bazaar: spices, textiles, jewellery, perfumes and crafts. Your guide teaches you how to haggle.","Afternoon (self-guided): the Egyptian Museum — Tutankhamun's golden mask, the royal mummy room (extra ticket) and 5,000 years of artefacts. Allow 2–3 hours.","Optional if time permits: Ben Ezra Synagogue, Sultan Hassan Mosque and the Church of St. George."],
+      note: "Meals: Breakfast, Lunch during morning tour. The museum is easy to reach by metro (Line 2 to Sadat Station); metro fare is not included." },
+    { day: 4, title: "Alexandria — Pearl of the Mediterranean", locations: "Alexandria",
+      activities: ["Approx. 7:00 AM pickup for a full-day shared group tour to Alexandria (2.5–3 hours each way).","Bibliotheca Alexandrina — the modern library honouring the ancient Library of Alexandria.","Citadel of Qaitbay — a 15th-century fortress on the site of the ancient Pharos Lighthouse.","Catacombs of Kom El Shoqafa and the Roman Amphitheatre.","Montazah Palace Gardens, a photo stop on the Alexandria Corniche, and Pompey's Pillar.","Lunch at a local Alexandria restaurant. Back in Cairo around 7:00 PM."],
+      note: "Meals: Breakfast, Lunch in Alexandria. Included: A/C coach, English-speaking guide, entrance fees to the sites listed." },
+    { day: 5, title: "Sand Dunes Desert Adventure", locations: "Western Desert",
+      activities: ["Hotel pickup and transfer to the desert.","1-hour ATV ride across golden sand dunes and a 30-minute camel ride.","Sandboarding, a Bedouin village visit, a traditional tea ceremony and sunset over the desert — as per the local tour operator's itinerary.","Traditional Bedouin lunch in the desert.","Return to the hotel."],
+      note: "Meals: Breakfast, Bedouin lunch. Included: A/C transport (shared), professional desert guide, safety equipment, bottled water and refreshments." },
+    { day: 6, title: "Relaxation & Independent Exploration", locations: "Cairo (Garden City, Dokki, Islamic Cairo)",
+      activities: ["A leisurely breakfast at the hotel.","Optional: a traditional hammam for spa treatments.","Explore local neighbourhoods such as Garden City and Dokki, and browse markets for souvenirs.","Coffee at historic cafés such as El Fishawy and authentic Egyptian food at local restaurants.","A photography walk along the Nile or through Islamic Cairo."],
+      note: "Meals: Breakfast only. Your hotel concierge can help with arrangements." },
+    { day: 7, title: "Departure", locations: "Cairo → Cairo International Airport",
+      activities: ["Relaxed breakfast and last-minute packing.","Hotel check-out in the morning.","Private transfer to Cairo International Airport with ample time for check-in."],
+      note: "Meals: Breakfast. Carry memories of ancient wonders and vibrant culture home." }
+  ],
+  stays: { note: "", items: [] },
+  included: {
+    inclusions: ["6 nights at the Sayyed Effendi Hotel, Cairo (double occupancy)","Daily breakfast","Lunch on all tour days, at local restaurants","Romantic Nile dinner cruise with live entertainment","All airport transfers in private air-conditioned vehicles","Private tours: Day 2 (Pyramids, Sphinx, Saqqara, Memphis) and Day 3 (Islamic & Coptic Cairo)","Shared group tour: Day 4 (Alexandria full day)","Desert safari: 1-hour ATV ride + 30-minute camel ride","English-speaking guide for all sightseeing","All entrance tickets for included sites (going inside the Pyramid is optional)","Egypt visa processing","Bottled water during tours"],
+    exclusions: ["International flights","Tips — $6–7 per person per day, mandatory, paid by the guest","Going inside the Pyramid (optional ticket)","Metro travel","Day 6 lunch and dinner, and meals not specified","Optional tours","Personal expenses and shopping","Travel insurance (recommended)"],
+    highlights: []
+  },
+  tour: {
+    pickup: "Cairo International Airport",
+    dropoff: "Cairo International Airport",
+    accommodation: "Sayyed Effendi Hotel, Cairo · 6 nights · double occupancy with daily breakfast",
+    transport: ["Private A/C limousine sedan (Toyota Corolla or Hyundai) for transfers and private tours","A/C coach for the shared Alexandria day tour","A/C transport (shared) for the desert safari","Nile dinner cruise"],
+    meal: "Daily breakfast, lunch on tour days at local restaurants, and one Nile dinner cruise",
+    group: S("Private trip · couples and small groups"),
+    difficulty: S("Easy to moderate (long sightseeing days; ATV and camel rides on Day 5)"),
+    best: S("October – April (November: Cairo 18–28°C, Alexandria 16–25°C)")
+  },
+  media: { cover: "Great Pyramids of Giza with the Sphinx at golden hour · landscape, 1200 × 675", alt: S("The Great Sphinx in front of the Pyramids of Giza at sunset, Cairo, Egypt") },
+  gallery: ["Pyramids of Giza & the Great Sphinx","Step Pyramid of Djoser, Saqqara","Colossal statue of Ramses II, Memphis","Nile dinner cruise and the lit-up Cairo skyline","Mosque of Muhammad Ali, Cairo Citadel","Hanging Church, Coptic Cairo","Khan El Khalili bazaar lanes and lanterns","Tutankhamun's golden mask, Egyptian Museum","Bibliotheca Alexandrina","Citadel of Qaitbay on the Mediterranean","Alexandria Corniche","ATV ride on the desert dunes","Camel ride at sunset","Bedouin tea in the desert"],
+  shorts: null, pastPhotos: null,
+  testimonials: [],
+  related: [],
+  faqs: [
+    { q: "Which vehicle will be provided?", a: "A limousine sedan — Toyota Corolla or Hyundai." },
+    { q: "Will the same driver and car be with us throughout the trip?", a: "Not always. For some tours the driver and car will change." },
+    { q: "In private trips, does every tour have a guide, or is it a driver-cum-chauffeur?", a: "A guide will be with you for all the sightseeing." },
+    { q: "Are all entry tickets included?", a: "Yes, all entry tickets are included. Only going inside the Pyramid is optional (not included)." },
+    { q: "Are tips included?", a: "No. Tips are paid by the guest: $6–7 per person per day, and they are mandatory." },
+    { q: "Are lunches on the tours Indian or local?", a: "All lunches are at local restaurants." },
+    { q: "Is the Egypt visa included?", a: "Yes, Egypt visa processing is included. Carry printed or digital copies of your passport (valid 6+ months), visa, tickets, hotel booking and insurance." },
+    { q: "What is the weather like in November?", a: "Ideal for sightseeing: Cairo 18–28°C, Alexandria 16–25°C. Pack light cotton clothes, a light jacket for evenings, comfortable walking shoes, a hat, sunglasses and SPF 50+ sunscreen." },
+    { q: "What currency should I carry?", a: "Egyptian Pound (EGP). ATMs are widely available and cards are accepted at hotels, restaurants and shops; carry cash for small purchases and tips." },
+    { q: "What should I wear at religious sites?", a: "Dress modestly with shoulders and knees covered, and remove your shoes in mosques. Friday is the holy day, so some sites have shorter hours." }
+  ],
+  terms: [
+    { t: "Inclusions", d: "Package includes the hotel, meals, transfers, tours, guides, entrance tickets and visa processing listed under Inclusions. Anything not listed is not included." },
+    { t: "Tips", d: "Tips are not included. They are mandatory and paid by the guest: $6–7 per person per day." },
+    { t: "Vehicles & drivers", d: "Private transfers and tours use a limousine sedan (Toyota Corolla or Hyundai). For some tours the driver and car will change." },
+    { t: "Entry tickets", d: "All entry tickets for included sites are covered. Going inside the Pyramid is optional and charged separately. The royal mummy room needs an additional ticket." },
+    { t: "Shared tours", d: "Day 4 (Alexandria) is a shared group tour. The Nile cruise and desert safari use shared (SIC) transfers. Desert activities follow the local tour operator's itinerary." },
+    { t: "Travel insurance", d: "Travel insurance is recommended. Tell us before departure if you want us to issue it." },
+    { t: "Photography", d: "Allowed at outdoor sites. Some museums and tombs prohibit photos or charge a fee. Never use flash near ancient paintings." },
+    { t: "Emergency numbers", d: "Tourist Police 126 · Ambulance 123." }
+  ]
 }
 
 ];

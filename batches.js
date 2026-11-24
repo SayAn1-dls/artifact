@@ -17,5 +17,6 @@ window.BATCHES = {
   "georgia": { verdict: "Optional: 1 batch", why: "A private couple proposal, so normally no batch is needed. But the file does date every day (Day 1 is 25 December, Day 7 is 31 December). If you want to sell this Christmas–New Year departure on the site, add this one batch.", items: [
     { start: "25/12/2026", end: "31/12/2026", seats: "2", filled: "0", urgency: "", status: "upcoming",
       urgencyHint: "Leave blank, or try: “Christmas to New Year's Eve in Georgia”. The file has no urgency line.", statusHint: "The file gives no year; 2026 is the next December. Pick “upcoming”." }
-  ] }
+  ] },
+  "egypt": { verdict: "No batch needed", why: "A private trip. The PDF's dates (12–18 Nov 2025) were for one couple and have passed.", items: [] }
 };

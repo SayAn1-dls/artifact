@@ -82,5 +82,15 @@ window.HIGHLIGHTS = {
     ["Adjarian wine & Makhuntseti", "Ancient Adjarian wines with churchkhela and cheese, then Makhuntseti Waterfall and Queen Tamar's medieval bridge."],
     ["Martvili Canyon", "Turquoise water, limestone cliffs draped in moss, and a wooden boat drifting through the canyon — nearly to yourselves in December."],
     ["Romantic dining", "Barbarestan's 1874 recipes, Shavi Lomi, and dinner at Meze with a sea-view table."]
+  ],
+  "egypt": [
+    ["Pyramids of Giza & the Sphinx", "Stand before the last surviving Wonder of the Ancient World with an expert Egyptologist guide."],
+    ["Saqqara & Memphis", "The Step Pyramid of Djoser, mastaba tombs, the colossal Ramses II and the Alabaster Sphinx."],
+    ["Romantic Nile dinner cruise", "Cairo's lit-up skyline, a traditional Egyptian dinner, and belly dancing & Tanoura shows."],
+    ["Islamic & Coptic Cairo", "The Citadel and Mosque of Muhammad Ali, the Hanging Church and the Holy Family's streets."],
+    ["Khan El Khalili Bazaar", "A 14th-century market of spices, textiles, jewellery and perfumes — with haggling tips from your guide."],
+    ["Egyptian Museum", "Tutankhamun's golden mask and 5,000 years of treasures, at your own pace."],
+    ["Alexandria day trip", "Bibliotheca Alexandrina, the Citadel of Qaitbay, the Catacombs and the Mediterranean Corniche."],
+    ["Desert safari", "A 1-hour ATV ride over golden dunes, a 30-minute camel ride and a Bedouin lunch in the desert."]
   ]
 };

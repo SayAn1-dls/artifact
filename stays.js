@@ -104,5 +104,12 @@ window.STAYS = {
       { from: "5", to: "6", tier: LUX, hotel: "Astoria Tbilisi", star: "4", location: "Rustaveli Avenue, Tbilisi", alt: "or similar", photo: null,
         desc: "Back to the Astoria after Martvili Canyon. Rest, refresh, exhale — then Kazbegi on Day 6 and a last Tbilisi morning.", amenities: S("Daily Breakfast, Georgian breakfast spread, Concierge, In-suite spa on request") }
     ]
+  },
+  "egypt": {
+    note: "One hotel for all 6 nights. The PDF gives no star rating, so pick the tier that matches the hotel.",
+    items: [
+      { from: "1", to: "6", tier: LUX, hotel: "Sayyed Effendi Hotel", star: null, location: "Cairo", alt: "or similar", photo: null,
+        desc: "A charming boutique property blending traditional Egyptian hospitality with modern comfort, ideally placed to explore Cairo's major attractions. Egyptian-inspired rooms make a peaceful retreat after days of exploring.", amenities: "Daily Breakfast, Double Occupancy, Daily Housekeeping, Concierge, WiFi, Airport Transfers" }
+    ]
   }
 };
