@@ -33,5 +33,10 @@ window.RELATED = {
   "japan-group": [
     { title: "JAPAN, FUJI TO OSAKA BAY", sub: "Japan", kind: "new" },
     { title: "VIETNAM NEW YEAR’S SIGNATURE TRIP", sub: "Vietnam", kind: "new" }
+  ],
+  "georgia": [
+    { title: "SRI LANKA ISLAND LOOP", sub: "Sri Lanka", kind: "new" },
+    { title: "VIETNAM IN DEPTH", sub: "Vietnam", kind: "new" },
+    { title: "BALI CUSTOMISABLE TRIP", sub: "Bali", kind: "new" }
   ]
 };

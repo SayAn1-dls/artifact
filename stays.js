@@ -32,18 +32,18 @@ window.STAYS = {
     ]
   },
   "sri-lanka": {
-    note: "Single-night stays use the same day in From Day and To Day.",
+    note: "Single-night stays use the same day in From Day and To Day. The Client PDF says hotel category is “to be confirmed”, so Star Rating is blank: pick the tier that matches the quote you send.",
     items: [
-      { from: "1", to: "2", tier: LUX, hotel: null, star: "4", location: "Mirissa", alt: "or similar", photo: null,
-        desc: "Two nights in Mirissa first, so the first unpack counts. Mirissa Beach: two nights and your first sunsets on the south coast.", amenities: "Daily Breakfast, Dinner (as per package selected)" },
-      { from: "3", to: "3", tier: LUX, hotel: null, star: "4", location: "Ella", alt: "or similar", photo: null,
-        desc: "Check in and settle into Ella's slower hill-town rhythm.", amenities: "Daily Breakfast, Dinner (as per package selected)" },
-      { from: "4", to: "4", tier: LUX, hotel: null, star: "4", location: "Nuwara Eliya", alt: "or similar", photo: null,
-        desc: "Check in at Nuwara Eliya. It gets cool up here; bring a layer.", amenities: "Daily Breakfast, Dinner (as per package selected)" },
-      { from: "5", to: "5", tier: LUX, hotel: null, star: "4", location: "Kandy", alt: "or similar", photo: null,
-        desc: "Into Kandy and check in, with the Temple of the Sacred Tooth Relic and a slow walk around Kandy Lake in the evening.", amenities: "Daily Breakfast, Dinner (as per package selected)" },
-      { from: "6", to: "6", tier: LUX, hotel: null, star: "4", location: "Colombo", alt: "or similar", photo: null,
-        desc: "Check in. Lunch, then some proper downtime.", amenities: "Daily Breakfast, Dinner (as per package selected)" }
+      { from: "1", to: "2", tier: LUX, hotel: null, star: null, location: "Mirissa · south coast", alt: "or similar", photo: null,
+        desc: "Two nights in Mirissa first, so the first unpack counts. Your first sunsets on the south coast, and Day 2 brings you back to the same room. No packing.", amenities: "Breakfast + dinner (as per package selected)" },
+      { from: "3", to: "3", tier: LUX, hotel: null, star: null, location: "Ella · hill country", alt: "or similar", photo: null,
+        desc: "Check in and settle into Ella's slower hill-town rhythm.", amenities: "Breakfast + dinner (as per package selected)" },
+      { from: "4", to: "4", tier: LUX, hotel: null, star: null, location: "Nuwara Eliya · tea country", alt: "or similar", photo: null,
+        desc: "Check in at Nuwara Eliya. It gets cool up here; bring a layer.", amenities: "Breakfast + dinner (as per package selected)" },
+      { from: "5", to: "5", tier: LUX, hotel: null, star: null, location: "Kandy · the sacred city", alt: "or similar", photo: null,
+        desc: "Into Kandy and check in, with the Temple of the Sacred Tooth Relic and a slow walk around Kandy Lake in the evening.", amenities: "Breakfast + dinner (as per package selected)" },
+      { from: "6", to: "6", tier: LUX, hotel: null, star: null, location: "Colombo · the capital", alt: "or similar", photo: null,
+        desc: "Check in. Lunch, then some proper downtime. An early night before the elephants and the flight home.", amenities: "Breakfast + dinner (as per package selected)" }
     ]
   },
   "vietnam-in-depth": {
@@ -92,6 +92,17 @@ window.STAYS = {
         desc: "3⭐ Accommodation with breakfast. Room Sizes in Japan are small as compared to other countries.", amenities: "Daily Breakfast (as per hotel’s menu), 2 Bottles of Mineral Water per person" },
       { from: "6", to: "9", tier: LUX, hotel: null, star: "3", location: "Tokyo", alt: "or similar", photo: null,
         desc: "3⭐ Accommodation with breakfast. Room Sizes in Japan are small as compared to other countries.", amenities: "Daily Breakfast (as per hotel’s menu), 2 Bottles of Mineral Water per person" }
+    ]
+  },
+  "georgia": {
+    note: "The file names the hotels. Tbilisi is split into two stays because you leave for Batumi in between (Nights 1–2, then Nights 5–6). For Batumi (5★) pick the highest tier your dropdown has.",
+    items: [
+      { from: "1", to: "2", tier: LUX, hotel: "Astoria Tbilisi", star: "4", location: "Rustaveli Avenue, Tbilisi", alt: "or similar", photo: null,
+        desc: "One of the capital's most refined historic addresses on Rustaveli Avenue, steps from the lantern-lit lanes of Old Tbilisi.", amenities: S("Daily Breakfast, Georgian breakfast spread, Concierge, In-suite spa on request") },
+      { from: "3", to: "4", tier: S("Ultra Luxury · 5 star"), hotel: "Grandeur Batumi", star: "5", location: "Batumi, Black Sea coast", alt: "or similar", photo: null,
+        desc: "Two nights on the Black Sea, with a sea-facing room preferred. Walk the empty winter boulevard right outside.", amenities: S("Daily Breakfast, Sea-view room") },
+      { from: "5", to: "6", tier: LUX, hotel: "Astoria Tbilisi", star: "4", location: "Rustaveli Avenue, Tbilisi", alt: "or similar", photo: null,
+        desc: "Back to the Astoria after Martvili Canyon. Rest, refresh, exhale — then Kazbegi on Day 6 and a last Tbilisi morning.", amenities: S("Daily Breakfast, Georgian breakfast spread, Concierge, In-suite spa on request") }
     ]
   }
 };

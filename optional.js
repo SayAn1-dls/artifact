@@ -22,10 +22,10 @@ window.OPTIONAL = {
   },
 
   "sri-lanka": {
-    note: "One add-on in the PDF, quoted on request.",
+    note: "One optional extension in the PDF: “Want to Add More?” It is not part of the core package and is quoted separately on request.",
     items: [
       { name: "Dambulla Cave Temple (UNESCO)", days: null, price: null, group: "",
-        desc: "Extension north of Kandy, to the UNESCO-listed Dambulla Cave Temple." }
+        desc: "An optional heritage extension for travellers who want to go deeper into Sri Lanka's Cultural Triangle. A cluster of cave shrines set into a great rock, their walls and ceilings covered in painted murals and lined with Buddha statues. Quiet, cool, and unlike anywhere else on this route. Dambulla sits north of Kandy, so we'll suggest the best way to work it in." }
     ]
   },
 
@@ -56,6 +56,17 @@ window.OPTIONAL = {
     items: [
       { name: "Day 5 · Hiroshima detour", days: "0", price: null, group: "",
         desc: "Shinkansen Kyoto → Hiroshima (~2 hours 30 mins via Nozomi Shinkansen). Visit Hiroshima Peace Memorial Park & Atomic Bomb Dome, lunch & exploration, ferry to Miyajima Island and Itsukushima Shrine’s Floating Torii Gate, then the Shinkansen back to Kyoto. Optional tour — not included in cost." }
+    ]
+  },
+  "georgia": {
+    note: "From the file's “Offbeat Extension — Wild Georgia” (3 extra days) and the New Year's Eve upgrade on Day 7. The luxury add-ons (ski day, helicopter, supra, photoshoot, spa) are activities, not extra days, so they are in Terms instead.",
+    items: [
+      { name: "Wild Georgia: Kakheti, Sighnaghi & Davit Gareja", days: "3", price: null, group: "",
+        priceHint: "The file only says “Add ~$150–200 for the 3-day extension” (USD, per couple). Convert to ₹ or leave empty.",
+        desc: "Extra Day 8 — Glamping in the Kakheti countryside: wine-estate glamping (Schuchmann Wines Chateau or Twins Wine Cellar), a private Qvevri cellar tasting of 6–8 wines, and an evening bonfire. Extra Day 9 — Alazani Valley: villages of stone tower houses, Alaverdi Cathedral, lunch at a local qvevri wine producer's home, and a night in Sighnaghi, the hilltop “City of Love”. Extra Day 10 — Davit Gareja: the 6th-century cave monastery on the Azerbaijan border, a cliff-trail walk and a hilltop picnic, then back to Tbilisi for one final evening." },
+      { name: "New Year's Eve in Tbilisi (extra night)", days: "1", price: null, group: "",
+        priceHint: "No price in the file. Ask the team, or leave empty.",
+        desc: "Extend one night: Tbilisi celebrates New Year's Eve with extraordinary energy. The whole old city becomes a firework-lit street party." }
     ]
   }
 };

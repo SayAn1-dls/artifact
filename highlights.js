@@ -20,13 +20,16 @@ window.HIGHLIGHTS = {
     ["Luxury Meets Local", "Premium 3–4★ stays and handpicked local experiences."]
   ],
   "sri-lanka": [
-    ["Mirissa Beach", "Two nights and your first sunsets on the south coast."],
-    ["Bentota mangroves", "A slow boat into green river tunnels."],
-    ["Galle Fort", "Ramparts, a lighthouse and colonial lanes turned cafés."],
-    ["The hill-country train", "Ella to Nanu Oya through tea estates."],
-    ["Ceylon tea", "Walk the rows, then taste a cup where it grew."],
-    ["Temple of the Tooth", "Sri Lanka's most revered temple, at dusk."],
-    ["Pinnawala elephants", "Feeding time, then the walk to the river."]
+    ["Mirissa Beach", "A soft curve of sand and warm water on the south coast. Your first two nights, and your first sunsets."],
+    ["Bentota Mangrove Safari", "A slow boat up the river and into green mangrove tunnels. Kingfishers and water monitors, if you're patient."],
+    ["Galle Fort & Dutch Quarter", "Ramparts, a lighthouse, and colonial lanes turned cafés and small shops. Best done on foot."],
+    ["Nine Arch Bridge", "A colonial-era railway viaduct in the jungle above Ella. A quick visit, if the train timing allows."],
+    ["Ella → Nanu Oya Train", "The headline act. Tea estates, tunnels and hill villages slide past the window for a few unhurried hours."],
+    ["Ceylon Tea Plantation", "Walk the rows, see how leaf becomes tea, then taste a cup a few metres from where it grew."],
+    ["Sita Amman Temple", "A small, colourful temple by a hill stream, linked by legend to Sita and the Ramayana."],
+    ["Ramboda Falls", "A tall waterfall on the hill road down to Kandy. A leg-stretch with a proper view."],
+    ["Temple of the Sacred Tooth Relic", "Sri Lanka's most revered Buddhist temple, beside Kandy Lake. Ornate, calm, and still very much in use."],
+    ["Pinnawala Elephants", "Home to 60+ elephants. Feeding time, then the herd's walk down to the river for a bath."]
   ],
   "vietnam-in-depth": [
     ["Three Vietnams, one trip", "Cool mountain north, heritage centre, island south"],
@@ -68,5 +71,16 @@ window.HIGHLIGHTS = {
     ["Daily JR travel tickets", "8 days of Japan Rail travel (ride the Shinkansen like a pro!)"],
     ["Onsen Experience", "Relax in traditional hot springs"],
     ["Mt Fuji day", "Ropeways, volcanic valleys, and lake cruises"]
+  ],
+  "georgia": [
+    ["Gergeti Trinity Church in the snow", "A 14th-century church at 2,170 m with Mount Kazbek behind, reached by 4×4 jeep up the Georgian Military Highway."],
+    ["Mtskheta at dawn", "UNESCO cathedrals in morning mist: Jvari Monastery above the meeting of two rivers, and 5th-century Svetitskhoveli."],
+    ["Old Tbilisi by night", "Lantern-lit lanes, the Peace Bridge, Narikala Fortress by cable car at golden hour, and candlelit wine cellars."],
+    ["Private sulfur bath for two", "Tbilisi's legendary hot spring baths in a private dome — the most indulgent hour of the entire trip."],
+    ["Prometheus Cave", "Six chambers of stalactites and underground rivers, with a two-person boat ride through the illuminated cave."],
+    ["Batumi in winter", "An empty Black Sea boulevard, art nouveau Piazza, the Alphabetic Tower and the Argo Cable Car."],
+    ["Adjarian wine & Makhuntseti", "Ancient Adjarian wines with churchkhela and cheese, then Makhuntseti Waterfall and Queen Tamar's medieval bridge."],
+    ["Martvili Canyon", "Turquoise water, limestone cliffs draped in moss, and a wooden boat drifting through the canyon — nearly to yourselves in December."],
+    ["Romantic dining", "Barbarestan's 1874 recipes, Shavi Lomi, and dinner at Meze with a sea-view table."]
   ]
 };

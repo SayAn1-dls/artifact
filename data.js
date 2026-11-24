@@ -214,10 +214,12 @@ window.TRIPS = [
 
 /* ───────────────────────── SRI LANKA ───────────────────────── */
 {
-  id: "sri-lanka", tab: "Sri Lanka", sub: "7D / 6N", pdf: "Luxpackers_SriLanka_7D6N_v5.pdf",
+  id: "sri-lanka", tab: "Sri Lanka", sub: "7D / 6N", pdf: "Luxpackers_SriLanka_7D6N_Client.pdf",
   checks: [
-    "The price in the PDF is still a placeholder (“₹ PRICE”). Fill Full Amount and Token Amount yourself.",
-    "The reviews page in the PDF has placeholder quotes, so there are no testimonials to copy."
+    "Updated to the new Client PDF. It gives no price (“Your price, your way… we'll send a clear, itemised quote”), so Full Amount and Token Amount are yours to fill.",
+    "Hotel category is now “to be confirmed” (the old v5 PDF said Standard 3★/4★). Star Rating below is left blank.",
+    "Departure is fixed at 23:40 on Day 7 in this version. Change it if the client's flight is different.",
+    "No reviews in this PDF, so Testimonials stay empty."
   ],
   basics: {
     destination: "Sri Lanka",
@@ -226,88 +228,82 @@ window.TRIPS = [
     title: "SRI LANKA ISLAND LOOP",
     slug: "sri-lanka-island-loop",
     theme: S("Family, Relaxed, Nature"),
-    subtitle: "Beach, hills, tea & elephants",
-    description: "See Sri Lanka. Don't rush it. In one week this island gives you warm surf, a Dutch fort town, a train through tea country, cool mountain mornings, a sacred temple city and a river full of elephants. Most itineraries cram it all in. This one leaves room to enjoy it. South coast first, then up into the hills, then down through Kandy to Colombo. No doubling back, slow mornings after long drives, and open evenings."
+    subtitle: "Beach, hills, tea and elephants. None of it rushed.",
+    description: "See Sri Lanka. Don't rush it. In one week this island gives you warm surf, a Dutch fort town, a train through tea country, cool mountain mornings, a sacred temple city and a river full of elephants. Most itineraries try to squeeze all of it in and send you home needing another holiday. We built this one the other way round: fewer hotel changes, short days where it matters, and time left over to simply sit still. Six nights, five stays, one easy loop: Colombo → Mirissa → Galle → Ella → Nuwara Eliya → Kandy → Colombo. For couples, families, kids, first-timers and three generations together."
   },
   pricing: {
     days: "7", nights: "6", full: null, slashed: null, token: null,
-    note: "Price is a placeholder in the PDF: “₹ PRICE per person, twin sharing · + 5% GST + 2% TCS”.",
-    optional: [
-      { name: "Dambulla Cave Temple (UNESCO)", dur: "Extension north of Kandy", price: "Quoted on request", note: "" }
-    ]
+    note: "No price in this PDF: “It depends on travel dates, hotel category and how many of you are travelling. Tell us yours and we'll send a clear, itemised quote.”",
+    optional: []
   },
   itinerary: [
-    { day: 1, title: "Arrival · south coast", locations: "Bandaranaike Airport → Mirissa",
-      activities: ["~03:00 — Land at Bandaranaike International Airport (CMB), Colombo. Your private chauffeur meets you at arrivals and drives straight down the coast.","Morning — Reach Mirissa. Early check-in, subject to hotel availability.","Afternoon — Nothing scheduled. Pool, or the sand at Mirissa Beach. Sunset by the water."],
-      note: "Good to know: day one has a single job: undo the overnight flight. We kept it that way on purpose." },
-    { day: 2, title: "Up the coast to Bentota", locations: "Mirissa · Bentota",
-      activities: ["Morning — Slow breakfast, then a scenic drive up the south-west coast.","Bentota — River and mangrove safari by boat, then time on Bentota Beach.","Evening — Back to the same room in Mirissa. No packing tonight."] },
-    { day: 3, title: "Galle Fort, then up to Ella", locations: "Galle · Ella",
-      activities: ["Morning — Breakfast, check-out and a short run along the coast to Galle.","Galle Fort — A slow walk through a walled town people still live in: ramparts, the lighthouse, the Old Dutch Hospital.","Lunch — Inside the fort, then boutiques and cafés on the old colonial lanes.","Afternoon — Scenic drive inland and uphill to Ella. We stop whenever anyone needs to.","Evening — Check in and settle into Ella's slower hill-town rhythm."],
-      note: "Included today: Private car & chauffeur, Galle Fort walk. Night 3 · Ella. Good to know: The longest drive of the week, broken up by Galle." },
-    { day: 4, title: "The train through tea country", locations: "Ella · Nanu Oya · Nuwara Eliya",
-      activities: ["Early — Breakfast. If the train timing allows, a quick stop at Nine Arch Bridge.","Ella Station — Board the scenic train to Nanu Oya: tea estates, tunnels and hill villages past the window.","Nanu Oya — Your chauffeur meets you off the train.","Afternoon — Tea plantation and factory visit, then Sita Amman Temple. Lunch on the way.","Evening — Check in at Nuwara Eliya. It gets cool up here; bring a layer."],
-      note: "Signature day. Included today: Scenic train, Tea factory visit, Private car & chauffeur. Night 4 · Nuwara Eliya. Train seats are subject to availability." },
-    { day: 5, title: "Waterfalls and the sacred city", locations: "Ramboda · Gampola · Kandy",
+    { day: 1, title: "Land. Breathe. Beach.", locations: "Bandaranaike Airport (CMB), Colombo → Mirissa",
+      activities: ["~03:00 — Land at Colombo. Your private chauffeur meets you at arrivals; bags in, seats back, straight down the coast.","Morning — Reach Mirissa. Early check-in, subject to hotel availability.","Midday — Sleep, shower, breakfast. In whatever order the kids decide.","Afternoon — Nothing scheduled. Pool, or the sand at Mirissa Beach.","Sunset — By the water. That's the whole plan."],
+      note: "Recover · Reset · Relax. Airport pickup · Mirissa Beach · Night 1 · Mirissa. Day one has a single job: undo the overnight flight. We kept it that way on purpose." },
+    { day: 2, title: "Up the Coast to Bentota", locations: "Mirissa → Bentota → Mirissa",
+      activities: ["Morning — Slow breakfast. No alarm needed.","Late morning — Scenic drive up the southwest coast to Bentota.","Bentota — River & mangrove safari by boat, then Bentota Beach.","Afternoon — Lunch. A local handicraft or gem outlet on the way, only if you're curious.","Evening — Back to the same room in Mirissa. No packing tonight."],
+      note: "Nature · Coast · Leisure. Mangrove safari · Private chauffeur · Night 2 · Mirissa." },
+    { day: 3, title: "From Fort Walls to Mountain Air", locations: "Mirissa → Galle Fort → Ella",
+      activities: ["Morning — Breakfast, check-out, and a short run along the coast to Galle.","Galle Fort — A slow walk through a walled town that people still live in: Dutch Quarter, Fort Ramparts, Galle Lighthouse, Old Dutch Hospital, colonial streets.","Lunch — Inside the fort, then boutiques and cafés on the old colonial lanes.","Afternoon — Scenic drive inland and uphill to Ella. We stop whenever anyone needs to.","Evening — Check in and settle into Ella's slower hill-town rhythm."],
+      note: "Heritage · Road Journey · Mountains. Check-out after breakfast; the longest drive of the week, broken up by Galle. The fort walk comes first, the car hours after lunch — which happens to be prime nap time for smaller travellers. Night 3 · Ella." },
+    { day: 4, title: "The Train Through Tea Country", locations: "Ella → Nanu Oya → Nuwara Eliya",
+      activities: ["Early — Breakfast. If the train timing allows, a quick stop at Nine Arch Bridge.","Ella Station — Board the scenic train to Nanu Oya.","On board — A few unhurried hours of window: tea plantations, misty mountains, green valleys and local villages.","Nanu Oya — Your private chauffeur meets you off the train.","Afternoon — Tea plantation & factory visit, then Sita Amman Temple. Lunch on the way.","Evening — Check in at Nuwara Eliya. It gets cool up here; bring a layer."],
+      note: "Signature day. Train · Tea Country · Ramayana Heritage. Scenic train · Tea estate & factory · Sita Amman Temple · Night 4 · Nuwara Eliya. Train schedules and seats are subject to availability and confirmed closer to travel. With children aboard, we enjoy the view from the windows, not the open doors." },
+    { day: 5, title: "Waterfalls, a Tower, and the Sacred City", locations: "Nuwara Eliya → Ramboda → Gampola → Kandy",
       activities: ["Morning — Relaxed breakfast and check-out.","Ramboda — Ramboda Falls, then the Bhaktha Hanuman Temple on the hillside.","Gampola — Ambuluwawa Tower. The views from the lower levels are plenty; the climb to the top is optional.","Afternoon — Into Kandy and check in.","Evening — Temple of the Sacred Tooth Relic, then a slow walk around Kandy Lake."],
-      note: "Included today: Private car & chauffeur, Sightseeing as per itinerary. Night 5 · Kandy. At temples, cover shoulders and knees." },
-    { day: 6, title: "Colombo, at your pace", locations: "Kandy → Colombo",
-      activities: ["Morning — Breakfast, check-out and the drive down from the hills to Colombo.","Midday — Check in. Lunch, then some proper downtime.","Late afternoon — A relaxed city tour. Pick what appeals: Gangaramaya Temple, Independence Square, Colombo Fort, Galle Face Green, shopping or cafés.","Evening — Dinner, and an early night. Tomorrow starts early."],
-      note: "Included today: Private car & chauffeur, City tour. Night 6 · Colombo." },
-    { day: 7, title: "Elephants, then home", locations: "Pinnawala → Bandaranaike Airport (CMB)",
-      activities: ["Early — Breakfast and check-out. Bags go into the car and stay there all day.","~09:15 — Feeding time at Pinnawala. The part children talk about for weeks.","~10:00 — The herd walks down to the Ma Oya river to bathe. Watch from the riverbank.","Afternoon — Lunch nearby, then private drop at Bandaranaike International Airport (CMB), with hours in hand.","As per flight — Departure from Colombo."],
-      note: "Included today: Pinnawala visit, Private airport drop (CMB). Feeding and bathing times are set by the orphanage and may shift slightly." }
+      note: "Waterfalls · Culture · Mountain Views. Night 5 · Kandy. The final stretch of Ambuluwawa is a steep, narrow climb and doesn't suit everyone — little ones, grandparents, or anyone uneasy with heights can enjoy the grounds and wait below." },
+    { day: 6, title: "Colombo, at Your Pace", locations: "Kandy → Colombo",
+      activities: ["Morning — Breakfast, check-out, and the drive down from the hills to Colombo.","Midday — Check in. Lunch, then some proper downtime.","Late afternoon — A relaxed city tour. Pick what appeals, skip what doesn't: Gangaramaya Temple, Independence Square, Colombo Fort, Galle Face Green, shopping, cafés.","Evening — Dinner, and an early night. Tomorrow starts early."],
+      note: "City · Heritage · Leisure. Private chauffeur · Night 6 · Colombo. After five days on the road, the city tour is meant to feel like a stroll, not a checklist." },
+    { day: 7, title: "Elephants, Then Home", locations: "Colombo → Pinnawala → Bandaranaike Airport (CMB)",
+      activities: ["Early — Breakfast and check-out. Bags go into the car and stay there all day.","~09:15 — Feeding time at Pinnawala. The part children talk about for weeks.","~10:00 — The herd walks down to the Ma Oya river to bathe. Watch from the riverbank.","Lunch — Nearby, unhurried.","Afternoon — Straight to the airport, with hours in hand. No extra stops.","23:40 — Departure from Colombo."],
+      note: "Wildlife · Last Experience · Departure. Why nothing else today? A late flight is easy to miss by adding “one more stop.” We don't. Feeding and bathing times are set by the elephant orphanage and may shift slightly on the day." }
   ],
-  stays: {
-    note: "Hotel category: Standard 3★/4★, or similar. Hotel names are shared with your personalised quote. No Luxury / Ultra Luxury tier in the PDF.",
-    items: [
-      { days: "Nights 1–2", location: "Mirissa", nights: "2 nights", hotel: "3★/4★ or similar" },
-      { days: "Night 3", location: "Ella", nights: "1 night", hotel: "3★/4★ or similar" },
-      { days: "Night 4", location: "Nuwara Eliya", nights: "1 night", hotel: "3★/4★ or similar" },
-      { days: "Night 5", location: "Kandy", nights: "1 night", hotel: "3★/4★ or similar" },
-      { days: "Night 6", location: "Colombo", nights: "1 night", hotel: "3★/4★ or similar" }
-    ]
-  },
+  stays: { note: "", items: [] },
   included: {
-    inclusions: ["6 nights: Mirissa 2N · Ella 1N · Nuwara Eliya 1N · Kandy 1N · Colombo 1N — Standard 3★/4★, or similar","Private chauffeur-driven car for the whole route (vehicle type to be confirmed)","Airport pickup on Day 1 and private airport drop on Day 7, Bandaranaike International (CMB)","Sightseeing as per itinerary (entrance fees to be confirmed)","Scenic train, Ella → Nanu Oya (subject to availability)","Pinnawala elephant experience (entry to be confirmed)","Breakfast and dinner (as per package selected)"],
-    exclusions: ["International flights","Visa / ETA fees","Travel insurance","Meals not mentioned","Optional activities and add-ons","Tips and personal expenses","Anything not listed under “Included”"],
-    highlights: ["Mirissa Beach: two nights and your first sunsets on the south coast.","Bentota mangroves: a slow boat into green river tunnels.","Galle Fort: ramparts, a lighthouse and colonial lanes turned cafés.","The hill-country train: Ella to Nanu Oya through tea estates.","Ceylon tea: walk the rows, then taste a cup where it grew.","Temple of the Tooth: Sri Lanka's most revered temple, at dusk.","Pinnawala elephants: feeding time, then the walk to the river."]
+    inclusions: ["Accommodation · 6 nights: Mirissa 2N · Ella 1N · Nuwara Eliya 1N · Kandy 1N · Colombo 1N (hotel category to be confirmed)","Private transportation: chauffeur-driven private vehicle for the route (vehicle type to be confirmed)","Airport transfers: arrival pickup on Day 1 · departure drop on Day 7","Private chauffeur, with you from arrival to departure","Sightseeing mentioned in the itinerary (entrance fees to be confirmed)","Scenic train · Ella → Nanu Oya (seat class and tickets subject to availability)","Pinnawala elephant experience (entry arrangements to be confirmed)","Breakfast + dinner (meal plan subject to package selection)","Other inclusions, listed in your final quote"],
+    exclusions: ["International flights","Visa / ETA fees","Personal expenses","Meals not mentioned","Optional activities & add-ons","Travel insurance","Tips","Anything not listed under inclusions"],
+    highlights: []
   },
   tour: {
     pickup: "Bandaranaike International Airport (CMB), Colombo",
     dropoff: "Bandaranaike International Airport (CMB), Colombo",
-    accommodation: "Standard 3★/4★, or similar: Mirissa 2N · Ella 1N · Nuwara Eliya 1N · Kandy 1N · Colombo 1N",
-    transport: ["Private car with chauffeur, arrival to departure","Scenic train, Ella → Nanu Oya (subject to availability)","Boat: Bentota river and mangrove safari"],
-    meal: "Breakfast and dinner (as per package selected)",
-    group: "Couples, families, three generations (private trip)",
+    accommodation: "6 nights, 5 stays: Mirissa 2N · Ella 1N · Nuwara Eliya 1N · Kandy 1N · Colombo 1N. Hotels are shared with your personalised quote, based on your dates and preferred category.",
+    transport: ["Private chauffeur-driven car, arrival to departure (vehicle type to be confirmed)","Scenic train, Ella → Nanu Oya (subject to availability)","Boat: Bentota river & mangrove safari"],
+    meal: "Breakfast + dinner (meal plan subject to package selection)",
+    group: "Private journey · couples, families, kids, first-timers, three generations together",
     difficulty: S("Easy (climbs and walks stay optional for every age)"),
     best: null
   },
   media: { cover: "Blue train crossing Nine Arch Bridge, Ella (or tea hills in morning mist) · full-bleed, landscape", alt: S("Blue train crossing the Nine Arch Bridge in Ella, surrounded by green tea hills, Sri Lanka") },
-  gallery: ["Galle Fort lighthouse","Tea estate, Nuwara Eliya","Elephants at Pinnawala","Mirissa coastline, low sun","Ella Rock & hill villages","Kandy Lake at dusk","Tea pickers on a hill-country estate","Mirissa Beach at sunset","Boat under the Bentota mangrove canopy","Window view over tea slopes, Ella → Nanu Oya","Sita Amman Temple by the stream","Temple of the Tooth across Kandy Lake","Ramboda Falls","Galle Face Green at sunset","Gangaramaya Temple","Elephants bathing in the Ma Oya river"],
+  gallery: ["Mirissa Beach at sunset","Boat in the Bentota mangroves","Galle Fort ramparts & lighthouse","Nine Arch Bridge, Ella","Ella → Nanu Oya train through tea country","Ceylon tea plantation & factory","Sita Amman Temple by the hill stream","Ramboda Falls","Ambuluwawa Tower, Gampola","Temple of the Sacred Tooth Relic & Kandy Lake","Gangaramaya Temple / Galle Face Green, Colombo","Pinnawala elephants at feeding time","Elephants bathing in the Ma Oya river"],
   shorts: null, pastPhotos: null,
   testimonials: [],
-  related: [S("Thailand – Island Escape & City Adventures"), S("Bali Customisable Trip – 9D8N")],
+  related: [],
   faqs: [
-    { q: "Is this trip good for families with small children?", a: "Travelling with infants or toddlers? Share your child's routine when you enquire and we'll shape the days around naps, feeds and early nights. Child seats on request, subject to confirmation." },
-    { q: "Is the scenic train guaranteed?", a: "Schedules and seat classes are set by the railway. Seats are confirmed closer to travel." },
-    { q: "Can I check in early on Day 1?", a: "Early check-in is subject to hotel availability. Want a room guaranteed on arrival? Ask us to quote it." },
-    { q: "Do I have to climb Ambuluwawa Tower?", a: "The climb to the top is optional. The final section is steep and narrow." },
+    { q: "Is this trip good for families with small children?", a: "Yes. Activities can be adjusted according to the age, comfort and routine of younger travellers. Share your child's routine when you enquire, and we'll shape the days around naps, feeds and early nights. A few things, like the Ambuluwawa climb, simply aren't for little ones — those stay optional." },
+    { q: "Why does this route suit families and grandparents?", a: "Private, chauffeur-led (stop whenever someone needs to), comfortable pacing, no needless hotel hopping (two nights in Mirissa first), flexible sightseeing, plenty of downtime, a daytime scenic train, no rushed airport run, and climbs and walks stay optional so nobody is pushed into anything." },
+    { q: "Is the scenic train guaranteed?", a: "Schedules and seat classes are set by the railway. Seats are subject to availability and confirmed closer to travel." },
+    { q: "Can I check in early on Day 1?", a: "Early check-in is subject to hotel availability. Want a room guaranteed on arrival? Ask us to quote for it." },
+    { q: "Do I have to climb Ambuluwawa Tower?", a: "No. The climb to the top is optional. The final section is steep and narrow and may not suit everyone." },
     { q: "What should I wear at temples?", a: "Shoulders and knees covered, shoes off at the door. A light scarf in the day bag solves most of it." },
-    { q: "What is the weather like?", a: "Warm and humid on the coast; noticeably cooler in Ella and Nuwara Eliya, especially evenings." },
-    { q: "Do I need a visa?", a: "Check current Sri Lanka entry requirements for your passport. We'll point you the right way." }
+    { q: "What is the weather like?", a: "Warm and humid on the coast; noticeably cooler in Ella and Nuwara Eliya, especially evenings. Bring layers." },
+    { q: "Do I need a visa?", a: "Check current Sri Lanka entry requirements for your passport before you travel. We're happy to point you the right way." },
+    { q: "How much does it cost?", a: "Your price, your way. It depends on travel dates, hotel category and how many of you are travelling. Send us your travel dates, number of adults, children's ages and preferred hotel category, and we'll send a clear, itemised quote." }
   ],
   terms: [
-    { t: "Hotels", d: "Hotel category: Standard 3★/4★, or similar. Hotel as per the availability of rate at the time of booking. Rates are subject to change as per season and booking timelines. Hotel names are shared with your personalised quote." },
-    { t: "Itinerary", d: "This itinerary is a sample; the order may shift for weather or timings." },
-    { t: "Timings", d: "All times are approximate and set around your flights, weather and opening hours. Pinnawala ~09:15 and ~10:00 are fixed by the orphanage." },
-    { t: "Taxes", d: "Price per person, twin sharing · + 5% GST + 2% TCS. TCS is adjustable when you file your ITR. GST is not." },
-    { t: "The last day", d: "You check out on Day 7 morning. A day-use room before the flight can be added at extra cost." },
-    { t: "With little ones", d: "Galle's ramparts and temple steps are uneven. A baby carrier beats a stroller." },
-    { t: "Flexibility", d: "The order of sightseeing may shift for weather or opening hours. We'll always tell you why." },
-    { t: "Payee name", d: "Luxpackers is a brand of Travel with Vision, our registered firm. Payments, invoices and GST all carry that name." }
+    { t: "Inclusions", d: "Final inclusions depend on the package you choose. Anything marked “To be confirmed” is locked in your personalised quote — subject to package selection / confirmation." },
+    { t: "Hotels", d: "Hotels are shared with your personalised quote, based on your dates and preferred category." },
+    { t: "The train", d: "Schedules and seat classes are set by the railway. Seats are subject to availability and confirmed closer to travel." },
+    { t: "Timings", d: "All times are indicative. The fixed ones: ~03:00 arrival, Pinnawala ~09:15 and ~10:00, and your 23:40 flight." },
+    { t: "Day 1 check-in", d: "Early check-in is subject to hotel availability. A room guaranteed on arrival can be quoted for." },
+    { t: "The last day", d: "You check out on Day 7 morning. A day-use room before the flight can be requested, at additional cost." },
+    { t: "With little ones", d: "Galle's ramparts and temple steps are uneven — a baby carrier is often easier than a stroller. Child seats on request, subject to confirmation." },
+    { t: "Flexibility", d: "The order of sightseeing may shift for weather, local conditions or opening hours. We'll always tell you why." },
+    { t: "Optional extension", d: "Dambulla Cave Temple is not part of the core package. Quoted separately on request, along with any extra time it needs." }
   ]
 },
+
 
 /* ───────────────────────── VIETNAM IN DEPTH ───────────────────────── */
 {
@@ -706,5 +702,111 @@ window.TRIPS = [
     { t: "Rooms", d: "Room Sizes in Japan is very small compared to other countries." },
     { t: "USD pricing", d: "Offer Price $1745 + Taxes (Original Price $2746). Remittance applicable as per ROE." }
   ]
+},
+
+/* ───────────────────────── GEORGIA ───────────────────────── */
+{
+  id: "georgia", tab: "Georgia Couple", sub: "7D / 6N", pdf: "Georgia_Luxpackers_Couple_Itinerary.html",
+  checks: [
+    "The cover says “7 Nights · 8 Days”, but the day-by-day plan runs 25 → 31 Dec: 7 days and 6 nights (Tbilisi 4N + Batumi 2N). This sheet uses 7 days / 6 nights. Change both if the team means 8D/7N.",
+    "Price is only an estimate in USD: $1,475 – $2,370 per couple, excluding flights. There is no ₹ price, so Full Amount and Token Amount are yours to fill.",
+    "The file has no “Inclusions / Exclusions” list. The ones marked Suggested are read from the day plan and budget table. Confirm them with the team.",
+    "This is a bespoke couple proposal: “All dates, hotels, inclusions and pricing are indicative and subject to availability at time of booking.”"
+  ],
+  basics: {
+    destination: "Georgia",
+    market: "International",
+    tripType: "Custom / private trip",
+    title: "GEORGIA — A COUPLE'S WINTER JOURNEY",
+    slug: "georgia-couples-winter-journey",
+    theme: "Slow, Romantic, Scenic",
+    subtitle: "Where ancient mountains hold your secrets & wine warms your evenings",
+    description: "A private romantic journey through Georgia in December. Georgia doesn't ask you to rush. It asks you to pour another glass, linger over a fire, watch the mountains turn copper at dusk — and forget, just for a while, that the rest of the world exists. From the cobblestone warmth of Old Tbilisi to the snow-dusted ridges of Kazbegi, from the Black Sea promenade of Batumi to the turquoise silence of Martvili Canyon, with the UNESCO cathedrals of Mtskheta in morning mist. Four nights in Tbilisi, two in Batumi, and a day trip to Kazbegi and the Gergeti Trinity Church. This is not a checklist trip. This is a story you'll tell for years."
+  },
+  pricing: {
+    days: "7", nights: "6", full: null, slashed: null, token: null,
+    note: "Only a USD estimate in the file: $1,475 – $2,370 per couple, excluding flights (Astoria Tbilisi 4N $320–480 · Grandeur Batumi 2N $200–300 · private tours & transfers $400–550 · meals $250–400 · wine & cafés $100–180 · sulfur bath $25–40 · shopping $100–300 · misc & tips $80–120). Add ~$150–200 for the 3-day extension.",
+    optional: []
+  },
+  itinerary: [
+    { day: 1, title: "Tbilisi, First Light", locations: "Tbilisi International Airport, Old Tbilisi, Rustaveli Avenue",
+      activities: ["Private transfer from Tbilisi International Airport to the Astoria Tbilisi — one of the capital's most refined historic addresses on Rustaveli Avenue.","Check-in, freshen up, and take your first evening walk through the lantern-lit lanes of Old Tbilisi.","Dinner at Barbarestan — Tbilisi's most celebrated restaurant, where recipes are drawn from an 1874 cookbook. Warm, amber-lit, impossibly romantic.","Nightcap: head to Lgims or Wine Factory N1 — a converted factory space that hums quietly on winter evenings."],
+      note: "25 December — Arrival. Tonight's romantic moment: walk across the Peace Bridge after dinner — the LED-lit glass bridge is dramatically beautiful at night, with the Narikala Fortress glowing above the old city." },
+    { day: 2, title: "Mtskheta at Dawn, Old Tbilisi by Dusk", locations: "Mtskheta, Jvari Monastery, Svetitskhoveli Cathedral, Old Tbilisi",
+      activities: ["Breakfast at the hotel — linger over it. There is no rushing today.","09:00 — Private drive to Mtskheta (30 minutes). UNESCO's “town museum” is best experienced in the soft morning light of December.","Jvari Monastery — walk to the cliff's edge together. The view of the two rivers merging below is genuinely breathtaking.","Svetitskhoveli Cathedral — a 5th century masterpiece, calm and cool inside even on the coldest day.","Return to Tbilisi for a slow afternoon. Walk Chardin Street — boutique galleries, warm cafés, and the faint sound of jazz.","Old Tbilisi walking tour — Metekhi Church, Narikala Fortress by cable car, the Sulfur Baths district (book a private dome for one hour — it's unmissable)."],
+      note: "26 December — Tbilisi & Mtskheta. Photo moment: the Narikala cable car offers the best panoramic shot of Tbilisi's old town. Go at golden hour (around 4pm in December)." },
+    { day: 3, title: "Into the Earth — Prometheus Cave, Onwards to Batumi", locations: "Tbilisi → Prometheus Cave → Kutaisi → Batumi",
+      activities: ["09:00 — Check out and begin the scenic drive towards Batumi via Western Georgia.","En route stop: Prometheus Cave, near Kutaisi — six magnificent chambers of stalactites, underground rivers and illuminated formations. A two-person boat ride through the cave is available.","The cave maintains 14°C year-round. Bring a light layer.","Lunch in Kutaisi — Georgia's second city, charming and understated in December.","Arrive Batumi by evening. Check in to Grandeur Batumi 5★ — sea-facing rooms preferred.","Evening: walk the deserted Batumi Boulevard in the dark, listening to the Black Sea."],
+      note: "27 December — Transfer Day. For two: book the private boat ride through Prometheus Cave in advance — it's short (around 10 minutes) but unforgettable." },
+    { day: 4, title: "Batumi — Wine, Waterfalls & a City to Yourselves", locations: "Makhuntseti, Batumi",
+      activities: ["Morning: drive east into the mountains to the Adjarian Wine House winery at Makhuntseti. Taste wines pressed from ancient Adjarian varietals, paired with local churchkhela and cheese.","Makhuntseti Waterfall and the medieval bridge of Queen Tamar.","Return to Batumi for a slow afternoon city walk: Batumi Boulevard, Statue of Medea, the art nouveau Piazza and the Alphabetic Tower.","Ride the Argo Cable Car for panoramic views over the Black Sea coast.","Dinner at Meze — Batumi's most refined dining experience. Ask for a sea-view table.","Evening: the seafront in December is moody, windswept and entirely photogenic."],
+      note: "28 December — Batumi. Wine lover's note: Adjara wines are lighter and more mineral than Kakheti's. Ask to see the Qvevri vessels — clay pots buried in the earth, used for fermentation since the Neolithic period." },
+    { day: 5, title: "Martvili Canyon — Where the Earth Turns Turquoise", locations: "Batumi → Martvili Canyon → Tbilisi",
+      activities: ["09:00 — Check out from Batumi. Begin the return drive to Tbilisi via the western route.","Stop at Martvili Canyon — turquoise waters, towering limestone cliffs and waterfall mist. Boat tours run even in December (weather permitting).","The canyon's stillness in winter is unlike anything in high season — photograph freely, move at your own pace.","Continue east towards Tbilisi with afternoon light building behind the Caucasus ridge.","Evening check-in at Astoria Tbilisi. Rest, refresh, exhale.","Late dinner at Shavi Lomi (“Black Lion”) — elevated Georgian cuisine in a warm, candlelit interior."],
+      note: "29 December — Batumi → Tbilisi." },
+    { day: 6, title: "Kazbegi — The Mountains Remember Everything", locations: "Zhinvali, Ananuri, Gudauri, Stepantsminda (Kazbegi), Gergeti Trinity Church",
+      activities: ["09:00 — Early departure in a 4×4 jeep — essential in December conditions.","Zhinvali Dam and Reservoir — turquoise water reflecting the Caucasus peaks. Stop for photos.","Ananuri Fortress — a medieval tower complex beside the water.","Gudauri — if there's snow (in December there almost certainly is), stop to play, breathe and absorb the altitude.","Stepantsminda (Kazbegi) — have khinkali (Georgian dumplings) at a local spot before the final ascent.","Gergeti Trinity Church (2,170 m, with Mount Kazbek behind) — the jeep takes you as high as it can; the final walk is short and unforgettable.","Return to Tbilisi by evening, in time for a quiet, celebratory dinner."],
+      note: "30 December — Kazbegi Day Trip, via the Georgian Military Highway. Once-in-a-trip shot: Gergeti Church with snow in the foreground and Mount Kazbek rising behind." },
+    { day: 7, title: "One Last Morning in Tbilisi", locations: "Tbilisi, Abanotubani, Dry Bridge Market, Tbilisi International Airport",
+      activities: ["Leisurely breakfast at the hotel — the Astoria does a fine Georgian spread.","Optional: one final slow walk through the Abanotubani (Sulfur Baths) district with morning light on the domed rooftops.","Pick up last-minute gifts: churchkhela, Georgian wine, hand-painted cloisonné jewellery from the Dry Bridge antique market.","12:00 — Check out. Transfer to the airport based on departure time."],
+      note: "31 December — New Year's Eve · Departure. Optional upgrade: if you can extend one night, Tbilisi celebrates New Year's Eve with a firework-lit street party across the old city." }
+  ],
+  stays: { note: "", items: [] },
+  included: {
+    inclusions: [
+      S("Accommodation · 6 nights: Astoria Tbilisi 4★ (4 nights) · Grandeur Batumi 5★ (2 nights, sea-facing room preferred)"),
+      "Private transfer from Tbilisi International Airport to the hotel on arrival",
+      S("Airport drop on Day 7, based on departure time"),
+      "All transfers — private drives between Tbilisi, Mtskheta, Batumi and Martvili",
+      "4×4 jeep for the Kazbegi day trip (essential in December)",
+      S("Private tours on all days, including cave entrances and cable cars"),
+      S("Daily breakfast at the hotel")
+    ],
+    exclusions: [
+      "International flights",
+      S("Lunches, dinners and drinks (the file budgets $250–400 for meals and $100–180 for wine per couple)"),
+      S("Private sulfur bath dome (~₾60–100 / $25–40 per couple)"),
+      S("Luxury add-ons: Gudauri ski day, helicopter flight, private supra, couple photoshoot, in-suite spa"),
+      S("3-day Wild Georgia extension and the New Year's Eve extra night"),
+      S("Shopping, souvenirs and tips"),
+      "Travel insurance (strongly recommended)"
+    ],
+    highlights: []
+  },
+  tour: {
+    pickup: "Tbilisi International Airport",
+    dropoff: "Tbilisi International Airport",
+    accommodation: "Astoria Tbilisi 4★ on Rustaveli Avenue (4 nights) · Grandeur Batumi 5★, sea-facing room preferred (2 nights)",
+    transport: ["Private car & driver for all transfers and drives","4×4 jeep for Kazbegi (Georgian Military Highway)","Narikala cable car (Tbilisi)","Argo Cable Car (Batumi)","Boat ride: Prometheus Cave & Martvili Canyon (weather permitting)"],
+    meal: S("Daily breakfast at the hotel; lunches and dinners at recommended restaurants"),
+    group: "Couple · private trip (2 travellers)",
+    difficulty: S("Easy (short walks; Kazbegi needs warm layers and insulated boots)"),
+    best: "December — Winter (Tbilisi 3–9°, Batumi 6–12°, Kazbegi –8–2°, Gudauri –10–0°)"
+  },
+  media: { cover: "Gergeti Trinity Church in the snow with Mount Kazbek rising behind · landscape, 1200 × 675", alt: S("Gergeti Trinity Church in winter snow with Mount Kazbek behind, Kazbegi, Georgia") },
+  gallery: ["Gergeti Trinity Church, Kazbegi, in snow","Peace Bridge at night, Tbilisi","Old Tbilisi from Narikala Fortress at golden hour","Martvili Canyon boat ride","Jvari Monastery cliff above the Aragvi & Kura rivers, Mtskheta","Svetitskhoveli Cathedral, Mtskheta","Ananuri Fortress & Zhinvali reservoir","Chardin Street, Tbilisi, lantern-lit","Sulfur bath domes, Abanotubani","Prometheus Cave chambers","Batumi Boulevard & Alphabetic Tower in winter","Makhuntseti Waterfall & Queen Tamar bridge","Gudauri ski slopes in December","Candlelit wine cellar, Old Tbilisi"],
+  shorts: null, pastPhotos: null,
+  testimonials: [],
+  related: [],
+  faqs: [
+    { q: "Do Indian passport holders need a visa for Georgia?", a: "Georgia offers visa-free entry to Indian passport holders for up to 1 year. Check updated requirements at evisa.gov.ge before travel." },
+    { q: "What currency is used?", a: "Georgian Lari (GEL). 1 USD ≈ 2.7 GEL (check rates before travel). ATMs are widely available in Tbilisi and Batumi. Rural areas prefer cash." },
+    { q: "Is English spoken?", a: "English is widely spoken in Tbilisi hotels, restaurants and tour services. Carry a translation app for smaller towns." },
+    { q: "Will I have mobile data?", a: "Georgian SIM cards (Magti or Geocell) offer excellent data coverage in cities for very low cost. Buy one at the airport. Coverage in Kazbegi is limited." },
+    { q: "Is the road to Kazbegi safe in December?", a: "It needs a 4×4 vehicle — your included jeep is essential. Do not attempt it in a regular car after snowfall. Your driver will know current conditions." },
+    { q: "How cold is it in December?", a: "Tbilisi 3–9°, Batumi 6–12°, Kazbegi –8–2° with heavy snow, Gudauri –10–0°. Pack a wool coat or parka, thermals, a fleece, waterproof and insulated boots, scarf, gloves and a beanie — plus one smart outfit each for dinners." },
+    { q: "Is Georgia safe for tourists?", a: "Georgia is consistently ranked among the safest countries in Europe and the Caucasus. Petty crime is rare. Walk freely at night in Tbilisi's Old Town. Emergency number: 112." },
+    { q: "Should we tip?", a: "10% in restaurants is appreciated but not obligatory. Tour guides typically receive $10–15/day per couple. Hotel porters — a few Lari is generous." },
+    { q: "Can we extend the trip?", a: "Yes. Add the 3-day Wild Georgia extension (Kakheti glamping, Alazani Valley & Sighnaghi, Davit Gareja), or one extra night in Tbilisi for New Year's Eve." }
+  ],
+  terms: [
+    { t: "Bespoke proposal", d: "This itinerary is a bespoke proposal. All dates, hotels, inclusions and pricing are indicative and subject to availability at time of booking. Your Luxpackers curator will personalise every detail." },
+    { t: "Estimated budget", d: "Estimated total per couple, excluding flights: $1,475 – $2,370. Add ~$150–200 for the 3-day extension." },
+    { t: "Weather & road conditions", d: "The Kazbegi road in December requires a 4×4. Martvili Canyon boat tours run weather permitting. The road to Tusheti is closed in deep winter." },
+    { t: "Travel insurance", d: "Strongly recommended — include winter sports/mountain coverage if you intend to ski or trek at altitude in December conditions." },
+    { t: "Alcohol & driving", d: "Drunk driving laws are strict (zero tolerance). All transfers are included — let your driver handle the roads." },
+    { t: "Add-on experiences", d: "Luxury add-ons are extra and priced as estimates: private ski day at Gudauri $120–180 per person (half day) · helicopter over the Caucasus $300–500 per couple (30 min) · private supra $60–100 per couple · couple photoshoot $150–300 (half day) · in-suite spa $80–150 per couple (90 min)." }
+  ]
 }
+
 ];

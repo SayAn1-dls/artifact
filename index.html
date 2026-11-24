@@ -139,7 +139,7 @@ html { scroll-behavior: smooth; }
   <div class="wrap">
     <div>
       <h1>Luxpackers Trip Fill Sheet</h1>
-      <p class="lede">Every field of the New Trip Builder, filled from the seven itinerary PDFs. Pick a trip, then copy each answer into the matching box in the dashboard.</p>
+      <p class="lede">Every field of the New Trip Builder, filled from the itinerary PDFs. Pick a trip, then copy each answer into the matching box in the dashboard.</p>
     </div>
     <div class="legend">
       <span>Plain text is copied from the PDF.</span>
@@ -219,7 +219,7 @@ html { scroll-behavior: smooth; }
         <div class="fgrid opt">
           ${field("Option name (first box)", o.name, { wide2: true })}
           ${field("Extra days (number box)", o.days, { empty: "Not in PDF", hint: o.days === "0" ? "Uses an existing day." : "" })}
-          ${field("Additional price ₹", o.price, { empty: "Priced on request", hint: "No number in the PDF. Ask the team, or leave empty." })}
+          ${field("Additional price ₹", o.price, { empty: "Priced on request", hint: o.priceHint || "No number in the PDF. Ask the team, or leave empty." })}
           ${field("What the extra days include", o.desc, { wide: true })}
           ${field("OR choice group (optional)", o.group || null, { wide: true, empty: "Leave blank", hint: o.group ? "Type the same group name on each option in this set, so customers pick one of them." : "" })}
           ${field("Option Images", null, { wide: true, empty: "Not in PDF. Skip, or add a photo of the place." })}
@@ -333,7 +333,7 @@ html { scroll-behavior: smooth; }
       : `<p class="none" style="margin:6px 0">No trip-specific reviews in this PDF. Leave Testimonials empty.</p>`;
     const rel = (window.RELATED || {})[t.id] || [];
     const related = `<div class="sub-h"><span>Related Trips · tick ${rel.length}</span></div>
-      <p class="hint" style="margin:0 0 6px">Find each card in the dashboard list and click its circle. My picks: the PDFs don't name related trips. Trips marked “New” appear in the list only after you save them.</p>` +
+      <p class="hint" style="margin:0 0 6px">Find each card in the dashboard list and click its circle. My picks: the itineraries don't name related trips. Trips marked “New” appear in the list only after you save them.</p>` +
       rel.map((r) => `<div class="rel"><div><b>${esc(r.title)}</b><span>${esc(r.sub)}</span>${r.note ? `<span class="hint">${esc(r.note)}</span>` : ""}</div>
         <span class="tag ${r.kind === "new" ? "calc" : "sug"}">${r.kind === "new" ? "New" : "In your list"}</span><span class="tick" aria-hidden="true">✓</span></div>`).join("");
     const social = `<div class="sub-h"><span>Testimonials</span></div>${testi}` + related;
